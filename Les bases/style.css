@@ -1,0 +1,37 @@
+
+.menu ul a{
+    list-style-type: none;  
+    background: linear-gradient(0deg, rgba(140,145,28,1) 0%, rgba(146,221,74,1) 75%);
+    border: solid 2px  #527a1c ;
+    color: white;
+    text-decoration: none;   
+    text-transform: uppercase;
+    font-size: large;
+    padding: 15px;
+}
+
+.menu span {
+    text-transform: lowercase;
+    color: #527a1c;
+    font-size: small;
+}
+
+
+
+
+.menu .orange{
+    background: linear-gradient(0deg, rgba(94,77,22,1) 0%, rgba(194,151,50,1) 100%);
+    border: solid 2px #9c7a1d;
+}
+
+.menu .orange span{
+    color: white;
+}
+
+.menu ul{
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+}
+
+
