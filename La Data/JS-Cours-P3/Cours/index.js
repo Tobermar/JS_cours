@@ -235,20 +235,79 @@ arrayNumber.push(17);
 //Méthode Objects
 //---------------------------
 
-document.body.innerHTML = data
-  // .filter((user) => user.admin === false)
-  .filter((user) => user.pseudo.includes("a"))
-  .sort((a, b) => b.age - a.age)
-  .map(
-    (user) =>
-      `
-<div class = "user-card">
-  <h2>${user.pseudo}</h2>
-  <p>Age : ${user.age} ans </p>
-  <p> Statut : ${user.admin ? "Modérateur" : "Membre"}</p>
-  <p>Techno favorite : ${user.technos[0]}</p>
-  <p> Autres Technos : ${user.technos[1]}, ${user.technos[2]} </p>
-</div>
- `
-  )
-  .join("");
+// document.body.innerHTML = data
+//   // .filter((user) => user.admin === false)
+//   .filter((user) => user.pseudo.includes("a"))
+//   .sort((a, b) => b.age - a.age)
+//   .map(
+//     (user) =>
+//       `
+// <div class = "user-card">
+//   <h2>${user.pseudo}</h2>
+//   <p>Age : ${user.age} ans </p>
+//   <p> Statut : ${user.admin ? "Modérateur" : "Membre"}</p>
+//   <p>Techno favorite : ${user.technos[0]}</p>
+//   <p> Autres Technos : ${user.technos[1]}, ${user.technos[2]} </p>
+// </div>
+//  `
+//   )
+//   .join("");
+
+//-------------
+//Les dates
+//-------------
+
+//Dates classiques
+let date = new Date();
+
+//TimeStamp
+let timeStamp = Date.parse(date);
+
+//IsoString
+let iso = date.toISOString();
+
+function dateParser(chaine) {
+  let newDate = new Date(chaine).toLocaleDateString("fr-FR", {
+    year: "numeric",
+    month: "long", //ou 'short' ou 'numeric'
+    day: "numeric",
+    // hour:'numeric'
+    // minute:'numeric'
+  });
+  return newDate;
+}
+
+// console.log(dateParser(date));
+// console.log(dateParser(timeStamp));
+// console.log(dateParser(iso));
+
+//------------------
+//Destructuring
+//------------------
+
+let moreData = {
+  destVar: ["Element 1", "Element 2"],
+};
+
+const { destVar } = moreData;
+
+console.log(moreData.destVar);
+console.log(destVar);
+
+let array5 = [70, 60, 90];
+let [x, y, z] = array5;
+console.log(x);
+console.log(y);
+console.log(z);
+
+const dateDestructuring = (chaine) => {
+  let newDate = chaine.split("T")[0];
+  let [y, m, d] = newDate.split("-");
+  return [d, m, y].join("/");
+};
+
+console.log(dateDestructuring(iso));
+
+//-------------
+//Les Datasets
+//-------------

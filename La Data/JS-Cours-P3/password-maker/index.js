@@ -24,6 +24,16 @@ function generatePassword() {
   }
 
   passwordOutpout.value = password;
+  passwordOutpout.select();
+
+  navigator.clipboard.writeText(passwordOutpout.value);
+  // document.execCommand("copy");
+
+  generateButton.textContent = "Copié !";
+
+  setTimeout(() => {
+    generateButton.textContent = "Générer mot de passe";
+  }, 2000);
 
   //   console.log(password);
 }
