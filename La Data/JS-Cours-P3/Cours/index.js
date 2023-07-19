@@ -291,14 +291,14 @@ let moreData = {
 
 const { destVar } = moreData;
 
-console.log(moreData.destVar);
-console.log(destVar);
+// console.log(moreData.destVar);
+// console.log(destVar);
 
 let array5 = [70, 60, 90];
 let [x, y, z] = array5;
-console.log(x);
-console.log(y);
-console.log(z);
+// console.log(x);
+// console.log(y);
+// console.log(z);
 
 const dateDestructuring = (chaine) => {
   let newDate = chaine.split("T")[0];
@@ -306,8 +306,41 @@ const dateDestructuring = (chaine) => {
   return [d, m, y].join("/");
 };
 
-console.log(dateDestructuring(iso));
+// console.log(dateDestructuring(iso));
 
 //-------------
 //Les Datasets
 //-------------
+
+//c'est une autre façon de selectionner que les "id" ou les  "class" (data-)
+
+const h3js = document.getElementById("javascript");
+// console.log(h3js);
+
+const h3 = document.querySelectorAll("h3");
+// h3.forEach((language) => console.log(language.dataset.lang));
+
+//-------------
+//Les Regex
+//-------------
+
+//Se sont des expressions régulières
+
+let mail = "from_scratch33@gmail.com";
+// console.log(mail.search(/frscceeceom/));
+
+// console.log(mail.replace(/from/, "de"));
+// console.log(mail.match(/SCratch/i)); // le "i" pour ne pas être "case sensityve"
+// console.log(mail.match(/[zug]/)); // les [] pour s'arreter qd ils trouve une des lettres
+// console.log(mail.match(/[123]/)); // retoucher un des chiffres
+
+// Tous les chiffres
+// console.log(mail.match(/\d/)); //d pour digit (chiffre)
+
+// Matcher toutes les lettres
+// console.log(mail.match(/[a-z]/));
+
+// console.log(mail.match(/^[\w_-]+@[\w-]+\.[a-z]{2,4}$/i));
+
+let separator = 265264849;
+// console.log(separator.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "));
